@@ -13,7 +13,7 @@ const LanguageToggle = () => {
     return (
         <button
             onClick={toggleLanguage}
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+            className="px-3 py-2 bg-gray-800 text-gray-300 rounded-md hover:bg-gray-700 transition-colors text-sm font-medium"
         >
             {i18n.language === "es" ? "English" : "Español"}
         </button>
