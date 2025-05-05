@@ -3,6 +3,7 @@ import CoinCard from '../../components/CoinCard/CoinCard'
 import Spinner from '../../components/Spinner/Spinner'
 import { useTranslation } from 'react-i18next'
 import { SearchIcon, ChevronDownIcon } from 'lucide-react'
+import BitcoinChart from '../../components/Graficos/GraficoBTC'
 
 const Home = () => {
   const { t } = useTranslation();
