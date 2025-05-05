@@ -37,7 +37,7 @@ const CoinCard = ({ coin, onFavoriteUpdate }) => {
 
   return (
     <Link to={`/coin-details/${coin.id}`}>
-      <div className='w-[250px] border-2 rounded-2xl shadow-xl p-4 flex flex-col'>
+      <div className='w-[250px] border-2 rounded-2xl shadow-xl p-4 flex flex-col bg-white'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center justify-start gap-4'>
             <img className='w-16 h-16' src={coin.image} alt={coin.name} />

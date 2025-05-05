@@ -32,6 +32,7 @@
     "Home": "Home",
     "Favorite": "Favorite",
     "About": "About",
+    "vacio":"there are no coins",
     "accessibility_content": "This article starts off the module with a good look at what accessibility is — this includes what groups of people we need to consider and why, what tools different people use to interact with the web, and how we can make accessibility part of our web development workflow.",
     "html_accessibility_content": "A great deal of web content can be made accessible just by making sure the correct HTML elements are always used for the correct purpose.",
     "css_js_accessibility_content": "CSS and JavaScript, when used properly, also have the potential to allow for accessible web experiences, but if misused they can significantly harm accessibility. This article outlines some CSS and JavaScript best practices that should be considered to ensure that even complex content is as accessible as possible.",

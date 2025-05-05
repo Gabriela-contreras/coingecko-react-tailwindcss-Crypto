@@ -44,22 +44,23 @@ const Home = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
+        <div className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2  text-white'>
 
 
           <input
             placeholder={t('look up coin')}
-            className='w-[40%] p-2 h-[40px] m-6 rounded-xl'
+            className='w-[40%] p-2 h-[40px] m-6 rounded-xl text-gray-800' 
             onChange={handleClick}
           />
 
-          <p className='text-center text-3xl font-bold text-gray-800'>
+          <p className='text-center text-3xl font-bold '>
             {t('Available Crypto Currencies')}
           </p>
 
-          <p className='text-center mb-12 text-xl font-normal text-gray-500'>
+          <p className='text-center mb-12 text-xl font-normal '>
             {t('Total coins')}: {!clickInput ? coins.length : filterName.length}
           </p>
+          <p className=' text-xl text-white font-semibold'>{ filterName.length > 0 ?  "": t('vacio') }</p>
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center'>
             {!clickInput ? coins.map(coin => (
