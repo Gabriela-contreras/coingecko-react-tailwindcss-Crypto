@@ -44,12 +44,11 @@ const Home = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2  text-white'>
-
+        <div className='  mx-auto max-w-7xl pt-10  text-white'>
 
           <input
             placeholder={t('look up coin')}
-            className='w-[40%] p-2 h-[40px] m-6 rounded-xl text-gray-800' 
+            className='w-[40%] p-2 h-[40px] m-6 rounded-xl text-gray-800 mt-6'
             onChange={handleClick}
           />
 
@@ -60,7 +59,7 @@ const Home = () => {
           <p className='text-center mb-12 text-xl font-normal '>
             {t('Total coins')}: {!clickInput ? coins.length : filterName.length}
           </p>
-          <p className=' text-xl text-white font-semibold'>{ filterName.length > 0 ?  "": t('vacio') }</p>
+          {/* <p className=' text-xl text-white font-semibold'>{ !clickInput && filterName.length > 0 ?  "": t('vacio') }</p> */}
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center'>
             {!clickInput ? coins.map(coin => (

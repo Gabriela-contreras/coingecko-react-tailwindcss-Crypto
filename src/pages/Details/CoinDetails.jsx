@@ -1,84 +1,60 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import LanguageToggle from '../../components/Traduccion/Traduccion';
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import Spinner from '../../components/Spinner/Spinner'
 
-const About = () => {
-  const { t } = useTranslation();
-  
+const CoinDetails = () => {
+  const [coin, setCoin] = useState({})
+  const [loading, setLoading] = useState(false)
+  const { id } = useParams()
+
+  useEffect(() => {
+    setLoading(true)
+    const url = `https://api.coingecko.com/api/v3/coins/${id}`
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setCoin(data)
+        setLoading(false)
+      })
+  }, [id])
+
   return (
-    <section className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
+    <>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2 text-white'>
+          <div className='h-full grid grid-cols-1 md:grid-cols-2 justify-items-center gap-4 md:justify-items-around content-center'>
+            <div className='order-2 md:order-1'>
+              <h1 className='text-3xl text-white'>General Info:</h1>
+              <hr />
+              <h1>Coin Name: {coin.name}</h1>
+              <h1>Market Cap Rank: {coin.market_cap_rank}</h1>
+              <h1>
+                Origin:{' '}
+                {coin.country_origin ? coin.country_origin : 'Not Available'}
+              </h1>
+              <h1>Contract Address: {coin.contract_address}</h1>
+              <h1>Hashing Algorithm: {coin.hashing_algorithm}</h1>
+              <h1>Genesis Date: {coin.genesis_date}</h1>
+              <h1>Last Updated: {coin.last_updated}</h1>
 
-      
-      <div className='grid grid-cols-1 gap-24 md:grid-cols-2'>
-        <div>
-          <h1 className='mb-6 text-2xl font-light text-gray-900 md:text-3xl'>
-            {t('Basic Questions')}
-          </h1>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('What is accessibility?')}
-          </p>
-          <p className='text-gray-600'>
-            This article starts off the module with a good look at what
-            accessibility is — this includes what groups of people we need to
-            consider and why, what tools different people use to interact with
-            the web, and how we can make accessibility part of our web
-            development workflow.
-          </p>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('HTML: A good basis for accessibility?')}
-          </p>
-          <p className='text-gray-600'>
-            A great deal of web content can be made accessible just by making
-            sure the correct HTML elements are always used for the correct
-            purpose.
-          </p>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('CSS and JavaScript accessibility best practices?')}
-          </p>
-          <p className='text-gray-600'>
-            CSS and JavaScript, when used properly, also have the potential to
-            allow for accessible web experiences, but if misused they can
-            significantly harm accessibility. This article outlines some CSS and
-            JavaScript best practices that should be considered to ensure that
-            even complex content is as accessible as possible.
-          </p>
+              <h1 className='text-3xl mt-4'>Scores:</h1>
+              <hr />
+              <h1>Community Score: {coin.community_score}</h1>
+              <h1>Developer Score: {coin.developer_score}</h1>
+              <h1>Liquidity Score: {coin.liquidity_score}</h1>
+              <h1>Public Interest Score: {coin.public_interest_score}</h1>
+            </div>
+            <div className='flex order-1 md:order-2 justify-center items-center'>
+              <img src={coin.image?.large} alt='coinImg' />
+            </div>
+          </div>
         </div>
-        <div>
-          <h1 className='mb-6 text-2xl font-light md:text-3xl'>
-            {t('Advanced Questions')}
-          </h1>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('WAI-ARIA basics?')}
-          </p>
-          <p className='text-gray-600'>
-            Following on from the previous article, sometimes making complex UI
-            controls that involve unsemantic HTML and dynamic JavaScript-updated
-            content can be difficult. WAI-ARIA is a technology that can help
-            with such problems by adding in further semantics that browsers and
-            assistive technologies can recognize and use to let users know what
-            is going on. Here we'll show how to use it at a basic level to
-            improve accessibility.
-          </p>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('Accessible multimedia?')}
-          </p>
-          <p className='text-gray-600'>
-            Another category of content that can create accessibility problems
-            is multimedia — video, audio, and image content need to be given
-            proper textual alternatives, so they can be understood by assistive
-            technologies and their users. This article shows how.
-          </p>
-          <p className='mt-10 mb-3 font-semibold text-gray-900'>
-            {t('Mobile accessibility?')}
-          </p>
-          <p className='text-gray-600'>
-            With web access on mobile devices being so popular, and popular
-            platforms such as iOS and Android.
-          </p>
-        </div>
-      </div>
-    </section>
+      )}
+    </>
   )
 }
 
-export default About
+export default CoinDetails
