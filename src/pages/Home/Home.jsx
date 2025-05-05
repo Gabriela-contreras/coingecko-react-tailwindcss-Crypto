@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react'
 import CoinCard from '../../components/CoinCard/CoinCard'
 import Spinner from '../../components/Spinner/Spinner'
 import MarkOptimization from '../../components/Graficos/GraficoBTC'
+import { useTranslation } from 'react-i18next'
+import LanguageToggle from '../../components/Traduccion/Traduccion'
+// import LanguageToggle from '../../components/LanguageToggle/LanguageToggle'
 
 const Home = () => {
+  const { t } = useTranslation();
+
   const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(false)
   const [filterName, setFilterName] = useState([])
   const [clickInput, setClickInput] = useState(false)
+
   useEffect(() => {
     setLoading(true)
     fetch(
@@ -39,12 +45,20 @@ const Home = () => {
         <Spinner />
       ) : (
         <div className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
-          <input placeholder='look up coin ' className='w-[40%] p-2 h-[40px] m-6 rounded-xl' onChange={handleClick} />
+
+
+          <input
+            placeholder={t('look up coin')}
+            className='w-[40%] p-2 h-[40px] m-6 rounded-xl'
+            onChange={handleClick}
+          />
+
           <p className='text-center text-3xl font-bold text-gray-800'>
-            Available Crypto Currencies
+            {t('Available Crypto Currencies')}
           </p>
-          <p className='text-center mb-12 text-xl font-normal text-gray-500 '>
-            Total coins: {!clickInput ? coins.length : filterName.length}
+
+          <p className='text-center mb-12 text-xl font-normal text-gray-500'>
+            {t('Total coins')}: {!clickInput ? coins.length : filterName.length}
           </p>
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center'>
@@ -55,12 +69,10 @@ const Home = () => {
               filterName.map(coin => (
                 <CoinCard key={coin.id} coin={coin} />
               ))
-
             }
           </div>
         </div>
       )}
-
     </>
   )
 }

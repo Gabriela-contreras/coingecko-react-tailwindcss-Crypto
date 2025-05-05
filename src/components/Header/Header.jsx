@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CustomLink from '../CustomLink/CustomLink'
+import Traduccion from '../Traduccion/Traduccion'
+import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 // import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 const Header = () => {
+  const { t } = useTranslation();
 
   return (
     <div className='sticky top-0 bg-white px-12 py-8 flex justify-center md:justify-between'>
@@ -12,12 +16,12 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        {/* <LanguageSwitcher /> */}
+        <Traduccion/>
       </div>
       <div className='flex gap-4 text-xl'>
-        <CustomLink to='/'>Home</CustomLink>
-        <CustomLink to='/favorite'>Favorites</CustomLink>
-        <CustomLink to='/about'>About</CustomLink>
+        <CustomLink to='/'>{t('Home')}</CustomLink>
+        <CustomLink to='/favorite'>{t('Favorite')}</CustomLink>
+        <CustomLink to='/about'>{t('About')}</CustomLink>
       </div>
     </div>
   )

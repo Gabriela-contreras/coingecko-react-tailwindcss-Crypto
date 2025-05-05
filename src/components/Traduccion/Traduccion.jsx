@@ -1,15 +1,23 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Traduccion = () => {
-    const { t } = useTranslation();
+const LanguageToggle = () => {
+    const { i18n } = useTranslation();
+
+    // Function to change the language
+    const toggleLanguage = () => {
+        const newLanguage = i18n.language === "es" ? "en" : "es";
+        i18n.changeLanguage(newLanguage);
+    };
 
     return (
-        <div>
-            <h1>{t("welcome")}</h1>
-            <p>{t("description")}</p>
-        </div>
+        <button
+            onClick={toggleLanguage}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+        >
+            {i18n.language === "es" ? "English" : "Español"}
+        </button>
     );
 };
 
-export default Traduccion;
+export default LanguageToggle;

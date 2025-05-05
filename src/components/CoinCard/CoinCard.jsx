@@ -1,69 +1,74 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const CoinCard = ({ coin, onFavoriteUpdate }) => {
-  // Estado para rastrear el estado favorito
+  const { t } = useTranslation();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // Verifica si la moneda es favorita
   useEffect(() => {
+    // Check if the coin is in favorites
     const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
     setIsFavorite(favorites[coin.id] === true);
   }, [coin.id]);
 
-
-  const handleFavoriteClick = (e) => {
+  const toggleFavorite = (e) => {
     e.preventDefault();
     e.stopPropagation();
-
-    //Activar o desactivar el estado de favorito
-    const newFavoriteStatus = !isFavorite;
-    setIsFavorite(newFavoriteStatus);
-
-    // Actualiza localStorage
+    
+    // Get current favorites
     const favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
-    favorites[coin.id] = newFavoriteStatus;
+    
+    // Toggle favorite status
+    const newStatus = !isFavorite;
+    favorites[coin.id] = newStatus;
+    
+    // Update localStorage
     localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    // Notificar al componente principal sobre la actualización si existe devolución de llamada
+    
+    // Update state
+    setIsFavorite(newStatus);
+    
+    // Notify parent if callback exists
     if (onFavoriteUpdate) {
       onFavoriteUpdate();
     }
   };
 
   return (
-    <div className='shadow-lg rounded-2xl w-[250px] bg-white p-4 hover:shadow-xl transition-shadow'>
-      <Link to={`/coin-details/${coin.id}`} className="block">
-        <div className='gap-4 flex justify-between items-center'>
-          <div className='flex-shrink-0'>
+    <Link to={`/coin-details/${coin.id}`}>
+      <div className='w-[250px] border-2 rounded-2xl shadow-xl p-4 flex flex-col'>
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-start gap-4'>
+            <img className='w-16 h-16' src={coin.image} alt={coin.name} />
             <div>
-              <img
-                alt={`${coin.name} logo`}
-                src={coin.image}
-                className='mx-auto object-cover rounded-full h-16 w-16'
-              />
+              <p className='text-xl font-bold'>{coin.name}</p>
+              <p>{coin.symbol}</p>
             </div>
           </div>
-          <div className='flex flex-col justify-end'>
-            <span className='text-gray-700 font-medium'>{coin.name}</span>
-            <span className='text-gray-400 text-xs uppercase'>{coin.symbol}</span>
-          </div>
-          <button
-            id="favorite-btn"
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-            title={isFavorite ? "Remove from favorites" : "Add to favorites"}
-            onClick={handleFavoriteClick}
-            className={`text-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-300 rounded-full p-1 transition-all ${isFavorite
-                ? 'text-red-500 transform scale-110'
-                : 'text-gray-400 hover:text-red-400'
-              }`}
+          <button 
+            onClick={toggleFavorite}
+            className='text-2xl text-yellow-500'
           >
-            {isFavorite ? '❤️' : '🤍'}
+            {isFavorite ? '★' : '☆'}
           </button>
         </div>
-      </Link>
-    </div>
-  )
-}
 
-export default CoinCard
+        <div className='mt-5 flex justify-between'>
+          <div>
+            <p className='text-gray-500'>{t('Price')}</p>
+            <p>${coin.current_price}</p>
+          </div>
+          <div>
+            <p className='text-gray-500'>{t('Change')}</p>
+            <p className={coin.price_change_percentage_24h < 0 ? 'text-red-500' : 'text-green-500'}>
+              {coin.price_change_percentage_24h?.toFixed(2)}%
+            </p>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default CoinCard;
