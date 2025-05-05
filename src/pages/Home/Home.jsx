@@ -89,13 +89,13 @@ const Home = () => {
                 <FadeInStagger className="z-10">
                   <FadeInItem>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                      {t('Discover the World of Cryptocurrencies')}
+                      {t('Discover')}
                     </h1>
                   </FadeInItem>
                   
                   <FadeInItem>
                     <p className="text-xl text-gray-300 mb-8">
-                      {t('Track real-time prices, market cap, and explore the future of digital assets all in one place.')}
+                      {t('SubtitleHome')}
                     </p>
                   </FadeInItem>
 

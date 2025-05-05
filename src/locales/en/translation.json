@@ -38,5 +38,10 @@
     "css_js_accessibility_content": "CSS and JavaScript, when used properly, also have the potential to allow for accessible web experiences, but if misused they can significantly harm accessibility. This article outlines some CSS and JavaScript best practices that should be considered to ensure that even complex content is as accessible as possible.",
     "wai_aria_content": "Following on from the previous article, sometimes making complex UI controls that involve unsemantic HTML and dynamic JavaScript-updated content can be difficult. WAI-ARIA is a technology that can help with such problems by adding in further semantics that browsers and assistive technologies can recognize and use to let users know what is going on. Here we'll show how to use it at a basic level to improve accessibility.",
     "multimedia_content": "Another category of content that can create accessibility problems is multimedia — video, audio, and image content need to be given proper textual alternatives, so they can be understood by assistive technologies and their users. This article shows how.",
-    "mobile_content": "With web access on mobile devices being so popular, and popular platforms such as iOS and Android."
+    "mobile_content": "With web access on mobile devices being so popular, and popular platforms such as iOS and Android.",
+"About Cryptos":"About Criptos",
+"Understanding cryptocurrency and blockchain technology":"Understanding cryptocurrency and blockchain technology",
+    "Discover":"Discover the World of Cryptocurrencies",
+    "SubtitleHome": "Track real-time prices, market cap, and explore the future of digital assets all in one place."
+
 }

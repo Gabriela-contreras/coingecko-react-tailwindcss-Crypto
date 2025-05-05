@@ -9,8 +9,8 @@ const About = () => {
     <div className='bg-gray-900 min-h-screen text-white'>
       <section className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
         <div className='text-center mb-12'>
-          <h1 className='text-4xl font-bold text-blue-400 mb-4'>About Crypto</h1>
-          <p className='text-gray-300 max-w-2xl mx-auto'>Understanding cryptocurrency and blockchain technology</p>
+          <h1 className='text-4xl font-bold text-blue-400 mb-4'>{t('About Cryptos')}</h1>
+          <p className='text-gray-300 max-w-2xl mx-auto'>{t('Understanding cryptocurrency and blockchain technology')}</p>
         </div>
 
         <div className='grid grid-cols-1 gap-12 md:gap-24 md:grid-cols-2'>

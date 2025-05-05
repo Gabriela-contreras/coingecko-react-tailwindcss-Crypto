@@ -32,11 +32,15 @@
     "Home": "Inicio",
     "Favorite": "Favoritos",
     "About": "Informacion",
-    "vacio":"No hay monedas ",
+    "vacio": "No hay monedas ",
     "accessibility_content": "Este artículo comienza el módulo con una buena mirada a qué es la accesibilidad — esto incluye qué grupos de personas debemos considerar y por qué, qué herramientas utilizan diferentes personas para interactuar con la web, y cómo podemos hacer de la accesibilidad parte de nuestro flujo de trabajo de desarrollo web.",
     "html_accessibility_content": "Una gran cantidad de contenido web puede hacerse accesible simplemente asegurándose de que los elementos HTML correctos se utilicen siempre para el propósito correcto.",
     "css_js_accessibility_content": "CSS y JavaScript, cuando se utilizan correctamente, también tienen el potencial de permitir experiencias web accesibles, pero si se utilizan mal pueden dañar significativamente la accesibilidad. Este artículo describe algunas mejores prácticas de CSS y JavaScript que deben considerarse para garantizar que incluso el contenido complejo sea lo más accesible posible.",
     "wai_aria_content": "Siguiendo el artículo anterior, a veces hacer controles de interfaz complejos que involucran HTML no semántico y contenido actualizado dinámicamente con JavaScript puede ser difícil. WAI-ARIA es una tecnología que puede ayudar con tales problemas al agregar más semántica que los navegadores y las tecnologías de asistencia pueden reconocer y usar para informar a los usuarios lo que está sucediendo. Aquí mostraremos cómo usarlo a un nivel básico para mejorar la accesibilidad.",
     "multimedia_content": "Otra categoría de contenido que puede crear problemas de accesibilidad es el multimedia — el contenido de video, audio e imagen debe recibir alternativas textuales adecuadas, para que puedan ser entendidos por tecnologías de asistencia y sus usuarios. Este artículo muestra cómo.",
-    "mobile_content": "Con el acceso web en dispositivos móviles siendo tan popular, y plataformas populares como iOS y Android."
+    "mobile_content": "Con el acceso web en dispositivos móviles siendo tan popular, y plataformas populares como iOS y Android.",
+    "Discover": "Descubra el mundo de las criptomonedas",
+    "SubtitleHome": "Realice un seguimiento de los precios en tiempo real, la capitalización del mercado y explore el futuro de los activos digitales, todo en un solo lugar.",
+    "About Cryptos": "Sobre Cryptos",
+    "Understanding cryptocurrency and blockchain technology": "Comprender las criptomonedas y la tecnología blockchain"
 }
