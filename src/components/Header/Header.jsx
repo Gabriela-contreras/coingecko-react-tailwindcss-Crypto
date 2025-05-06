@@ -8,7 +8,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <div className='sticky top-0 bg-gray-900 border-b border-gray-800 px-4 py-4 flex justify-between items-center z-10'>
+    <div className='sticky top-0 bg-gray-900 border-b border-gray-800 px-4 py-4 flex justify-between items-center z-20'>
       <div className='flex items-center'>
         <Link className='font-sans font-bold text-xl text-blue-500 mr-8' to='/'>
           Crypto
