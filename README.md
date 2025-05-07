@@ -50,6 +50,10 @@ La aplicación Crypto permite a los usuarios:
 
 ---
 ## 🖼️ Imagnes del proyecto 
+<img src="./public/img/coingeko.jpg">
+<img src="./public/img/WhatsApp Image 2025-05-05 at 19.30.49_1e69c1e2.jpg">
+<img src="./public/img/WhatsApp Image 2025-05-05 at 19.31.11_87a96441.jpg">
+<img src="./public/img/WhatsApp Image 2025-05-05 at 19.31.54_6177b657.jpg">
 
 
 
@@ -61,7 +65,7 @@ Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/usuario/repo.git
+   git clone https://github.com/Gabriela-contreras/coingecko-react-tailwindcss-Crypto.git
    ```
 
 2. **Navegar al directorio del proyecto:**
