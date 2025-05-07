@@ -4,6 +4,18 @@ Crypto es una aplicación web desarrollada como parte del Trabajo Práctico 2 (T
 
 ---
 
+## 📸 Vista previa del proyecto
+
+<div align="center">
+  <img src="./public/img1.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img2.jpg" width="45%" style="margin: 1%;" />
+  <br />
+  <img src="./public/img3.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img4.jpg" width="45%" style="margin: 1%;" />
+</div>
+
+---
+
 ## 📜 Trabajo Practico 2 
 
 **Miembros del Grupo:**
@@ -24,7 +36,10 @@ Este proyecto se desarrolló utilizando las siguientes herramientas y tecnologí
 
 - **React:** Biblioteca para construir interfaces de usuario. [Documentación](https://reactjs.org/)
 - **Tailwind CSS:** Framework de utilidades para estilos rápidos y consistentes. [Documentación](https://tailwindcss.com/)
+- **Framer Motion:** Biblioteca para crear efectos. [Documentación](https://motion.dev/)
+- **chart.js:** Biblioteca para crear Graficos. [Documentación](https://www.chartjs.org/)
 - **React Router Dom:** Gestión de rutas en aplicaciones React. [Documentación](https://reactrouter.com/)
+- **react i18next:** Framework para traducir a distintos idioma. [Documentación](https://react.i18next.com/)
 - **CoinGecko API:** Fuente de datos en tiempo real sobre criptomonedas. [Documentación](https://www.coingecko.com/en/api)
 
 ---

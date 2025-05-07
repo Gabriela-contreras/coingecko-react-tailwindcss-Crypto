@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import LanguageToggle from '../../components/Traduccion/Traduccion';
+import FadeInStagger, { FadeInItem } from '../../components/Animation/FadeInStagger';
 
 const About = () => {
   const { t } = useTranslation();
