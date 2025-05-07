@@ -7,11 +7,11 @@ Crypto es una aplicación web desarrollada como parte del Trabajo Práctico 2 (T
 ## 📸 Vista previa del proyecto
 
 <div align="center">
-  <img src="./public/img1.jpg" width="45%" style="margin: 1%;" />
-  <img src="./public/img2.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img/img1.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img/img2.jpg" width="45%" style="margin: 1%;" />
   <br />
-  <img src="./public/img3.jpg" width="45%" style="margin: 1%;" />
-  <img src="./public/img4.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img/img3.jpg" width="45%" style="margin: 1%;" />
+  <img src="./public/img/img4.jpg" width="45%" style="margin: 1%;" />
 </div>
 
 ---
@@ -62,15 +62,6 @@ La aplicación Crypto permite a los usuarios:
 - **Visualizar información detallada** como precio actual, capitalización de mercado y más.
 - **Marcar monedas como favoritas** para un acceso rápido.
 - **Ver gráficos simples** sobre tendencias de precios.
-
----
-## 🖼️ Imagnes del proyecto 
-<img src="./public/img/coingeko.jpg">
-<img src="./public/img/WhatsApp Image 2025-05-05 at 19.30.49_1e69c1e2.jpg">
-<img src="./public/img/WhatsApp Image 2025-05-05 at 19.31.11_87a96441.jpg">
-<img src="./public/img/WhatsApp Image 2025-05-05 at 19.31.54_6177b657.jpg">
-
-
 
 
 
